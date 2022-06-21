@@ -18,9 +18,15 @@
     <ClCompile Include="Conway%27s Game of Life.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="GameOfLifeRules.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="olcPixelGameEngine.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOfLifeRules.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
