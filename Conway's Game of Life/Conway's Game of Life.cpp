@@ -5,6 +5,7 @@
 
 #define OLC_PGE_APPLICATION
 #include "olcPixelGameEngine.h"
+#include "GameOfLifeRules.h"
 
 // Override base class with your custom functionality
 class GameOfLife : public olc::PixelGameEngine
@@ -19,17 +20,34 @@ public:
 	bool OnUserCreate() override
 	{
 		// Called once at the start, so create things here
+		m_rules.createGrid({ static_cast<unsigned>(ScreenWidth()) , static_cast<unsigned>(ScreenHeight()) });
+		
+		//Set some cells for test drawing
+		m_rules.setCellStateAt({ 0,0 });
+		m_rules.setCellStateAt({ 10,0 });
+		m_rules.setCellStateAt({ 20,40 });
+		m_rules.setCellStateAt({ 230,860 });
 		return true;
 	}
 
 	bool OnUserUpdate(float fElapsedTime) override
 	{
-		// Called once per frame, draws random coloured pixels
+		Clear(olc::WHITE);
 		for (int x = 0; x < ScreenWidth(); x++)
+		{
 			for (int y = 0; y < ScreenHeight(); y++)
-				Draw(x, y, olc::Pixel(rand() % 256, rand() % 256, rand() % 256));
+			{
+				if (m_rules.getCellStateAt({ x, y }) == GameOfLifeRules::CellState::live)
+				{
+					Draw(x, y, olc::GREEN);
+				}
+			}
+		}
 		return true;
 	}
+
+private:
+	GameOfLifeRules m_rules;
 };
 
 int main()
