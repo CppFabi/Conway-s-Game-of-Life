@@ -7,16 +7,15 @@
 #include "olcPixelGameEngine.h"
 
 // Override base class with your custom functionality
-class Example : public olc::PixelGameEngine
+class GameOfLife : public olc::PixelGameEngine
 {
 public:
-	Example()
+	GameOfLife()
 	{
 		// Name your application
-		sAppName = "Example";
+		sAppName = "Conway's Game of Life";
 	}
 
-public:
 	bool OnUserCreate() override
 	{
 		// Called once at the start, so create things here
@@ -35,8 +34,8 @@ public:
 
 int main()
 {
-	Example demo;
-	if (demo.Construct(256, 240, 4, 4))
-		demo.Start();
+	GameOfLife game;
+	if (game.Construct(80, 45, 20, 20))
+		game.Start();
 	return 0;
 }
