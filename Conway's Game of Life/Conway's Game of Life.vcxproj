@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="Conway%27s Game of Life.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="olcPixelGameEngine.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
