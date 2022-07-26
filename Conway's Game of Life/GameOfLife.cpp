@@ -12,12 +12,11 @@ bool GameOfLife::OnUserCreate()
 	m_rules.createGrid({ static_cast<unsigned>(ScreenWidth()) , static_cast<unsigned>(ScreenHeight()) });
 
 	//Set some cells for test drawing
-	m_rules.setCellStateAt({ 0,0 });
-	m_rules.setCellStateAt({ 10,0 });
-	m_rules.setCellStateAt({ 20,40 });
-	m_rules.setCellStateAt({ 21,40 });
-	m_rules.setCellStateAt({ 22,40 });
-	m_rules.setCellStateAt({ 230,860 });
+	m_rules.setCellStateAt({ 40,23 });
+	m_rules.setCellStateAt({ 39,23 });
+	m_rules.setCellStateAt({ 40,22 });
+	m_rules.setCellStateAt({ 41,22 });
+	m_rules.setCellStateAt({ 40,24 });
 	return true;
 }
 namespace {
