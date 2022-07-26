@@ -14,17 +14,20 @@ public:
 		int x;
 		int y;
 	};
-	struct gridSize
+	struct GridSize
 	{
 		unsigned int x;
 		unsigned int y;
 	};
 
-	void createGrid(gridSize size);
+	void createGrid(GridSize size);
 	CellState getCellStateAt(CellPosition pos) const;
 	void setCellStateAt(CellPosition pos, CellState state = CellState::live);
 
+	void createNextGeneration();
+
 private:
 	std::vector<std::vector<CellState>> m_grid;
+	std::vector<std::vector<CellState>> m_gridNextGeneration;
 };
 

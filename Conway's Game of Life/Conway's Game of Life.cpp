@@ -26,6 +26,8 @@ public:
 		m_rules.setCellStateAt({ 0,0 });
 		m_rules.setCellStateAt({ 10,0 });
 		m_rules.setCellStateAt({ 20,40 });
+		m_rules.setCellStateAt({ 21,40 });
+		m_rules.setCellStateAt({ 22,40 });
 		m_rules.setCellStateAt({ 230,860 });
 		return true;
 	}
@@ -43,11 +45,19 @@ public:
 				}
 			}
 		}
+		m_time += fElapsedTime;
+		if (m_time > 0.2f)
+		{
+			m_time = 0.f;
+			m_rules.createNextGeneration();
+		}
+
 		return true;
 	}
 
 private:
 	GameOfLifeRules m_rules;
+	float m_time{ 0.f };
 };
 
 int main()
