@@ -20,14 +20,30 @@ bool GameOfLife::OnUserCreate()
 	m_rules.setCellStateAt({ 230,860 });
 	return true;
 }
+namespace {
+	auto toggleCellState(GameOfLifeRules::CellState oldCellState)
+	{
+		return oldCellState == GameOfLifeRules::CellState::live ? GameOfLifeRules::CellState::dead : GameOfLifeRules::CellState::live;
+	}
+}
 
 bool GameOfLife::OnUserUpdate(float fElapsedTime)
 {
 	m_time += fElapsedTime;
-	if (m_time > 0.2f)
+	if (m_bIsRunning && m_time > 0.2f)
 	{
 		m_time = 0.f;
 		m_rules.createNextGeneration();
+	}
+	if (GetMouse(0).bPressed)
+	{
+		const auto& mousePos = GetMousePos();
+		auto oldCellState = m_rules.getCellStateAt({ mousePos.x,mousePos.y });
+		m_rules.setCellStateAt({ mousePos.x,mousePos.y }, toggleCellState(oldCellState));
+	}
+	if (GetKey(olc::SPACE).bPressed)
+	{
+		m_bIsRunning = !m_bIsRunning;
 	}
 
 	draw();

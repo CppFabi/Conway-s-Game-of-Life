@@ -15,5 +15,6 @@ private:
 
 	GameOfLifeRules m_rules;
 	float m_time{ 0.f };
+	bool m_bIsRunning{ false };
 };
 
