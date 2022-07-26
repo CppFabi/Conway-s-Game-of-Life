@@ -21,12 +21,18 @@
     <ClCompile Include="GameOfLifeRules.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="GameOfLife.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="olcPixelGameEngine.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="GameOfLifeRules.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOfLife.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

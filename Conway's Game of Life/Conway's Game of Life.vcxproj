@@ -140,9 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Conway%27s Game of Life.cpp" />
+    <ClCompile Include="GameOfLife.cpp" />
     <ClCompile Include="GameOfLifeRules.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameOfLife.h" />
     <ClInclude Include="GameOfLifeRules.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
   </ItemGroup>
